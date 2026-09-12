@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Procevra | Автоматизація бізнесу та Telegram-боти</title>
+  <meta name="description" content="Автоматизуємо рутинні бізнес-процеси: заявки, продажі, підтримку, звіти та інтеграції між CRM, Telegram, Google Sheets, API та іншими сервісами.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="./index.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="uk_UA">
+  <meta property="og:title" content="Procevra | Автоматизація бізнесу та Telegram-боти">
+  <meta property="og:description" content="Автоматизуємо рутинні бізнес-процеси: заявки, продажі, підтримку, звіти та інтеграції між вашими сервісами.">
+  <meta property="og:url" content="./index.html">
+  <meta property="og:site_name" content="Procevra — Автоматизація бізнесу та Telegram-боти">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Procevra | Автоматизація бізнесу та Telegram-боти">
+  <meta name="twitter:description" content="Автоматизуємо рутинні бізнес-процеси: заявки, продажі, підтримку, звіти та інтеграції між вашими сервісами.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти до контенту</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="logo" href="#top" aria-label="На початок сторінки">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo-text">Procevra</span>
+      </a>
+
+      <nav class="nav" id="site-nav" aria-label="Основна навігація">
+        <a href="#problem">Проблема</a>
+        <a href="#capabilities">Можливості</a>
+        <a href="#use-cases">Приклади</a>
+        <a href="#process">Як працюємо</a>
+        <a href="#faq">FAQ</a>
+        <a href="#cta" class="nav-cta js-telegram-cta" data-cta="nav">Отримати безкоштовну консультацію</a>
+      </nav>
+
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Відкрити меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section" aria-labelledby="hero-title">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <p class="eyebrow">Автоматизація бізнес-процесів під ключ</p>
+          <h1 id="hero-title">Автоматизуйте рутинні процеси вашого бізнесу</h1>
+          <p class="hero-subtitle">Telegram-боти, AI та інтеграції під ваші бізнес-процеси</p>
+          <p class="hero-lead">
+            Автоматизуємо заявки, продажі, підтримку, внутрішні процеси, звіти та обмін даними між вашими сервісами.
+          </p>
+          <div class="hero-actions">
+            <a href="#cta" class="btn btn-primary js-telegram-cta" data-cta="hero">Отримати безкоштовну консультацію</a>
+            <a href="#capabilities" class="btn btn-ghost">Що можна автоматизувати</a>
+          </div>
+          <p class="hero-note">Безкоштовно розберемо ваш процес та запропонуємо варіант автоматизації.</p>
+        </div>
+
+        <div class="hero-visual reveal" aria-hidden="true">
+          <div class="hero-visual-frame">
+            <div class="hero-links">
+              <span>CRM</span>
+              <span>API</span>
+              <span>Google Sheets</span>
+              <span>AI</span>
+            </div>
+            <div class="phone-mockup">
+              <div class="phone-notch"></div>
+              <div class="chat-header">
+                <div class="chat-avatar">P</div>
+                <div>
+                  <div class="chat-name">Procevra Assistant</div>
+                  <div class="chat-status">онлайн</div>
+                </div>
+              </div>
+              <div class="chat-body">
+                <div class="bubble bot">Що бажаєте зробити?</div>
+                <div class="chat-chips chat-chips-menu">
+                  <span>Нова заявка</span>
+                  <span>Продажі</span>
+                  <span>Підтримка</span>
+                  <span>Звіт</span>
+                  <span>Внутрішній процес</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section problem" id="problem" aria-labelledby="problem-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 id="problem-title">Скільки часу ваш бізнес витрачає на рутину?</h2>
+        </div>
+        <div class="problem-grid">
+          <article class="problem-card reveal">
+            <div class="icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M7 7h10M7 12h10M7 17h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M17.5 15.5 20 18l-2.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Повторювані задачі вручну</h3>
+            <p>Співробітники щодня виконують однакові операції, які можна автоматизувати.</p>
+          </article>
+          <article class="problem-card reveal">
+            <div class="icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="6" cy="12" r="2.5" stroke="currentColor" stroke-width="1.6"/><circle cx="18" cy="7" r="2.5" stroke="currentColor" stroke-width="1.6"/><circle cx="18" cy="17" r="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M8.3 11.2 15.7 8M8.3 12.8 15.7 16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Дані переносяться між системами</h3>
+            <p>Інформацію вручну копіюють між Telegram, CRM, таблицями та іншими сервісами.</p>
+          </article>
+          <article class="problem-card reveal">
+            <div class="icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M8 10h8M8 14h5M7 4h10a2 2 0 0 1 2 2v14l-4-3H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Заявки та запити губляться</h3>
+            <p>Повідомлення приходять з різних каналів і потребують ручної обробки.</p>
+          </article>
+          <article class="problem-card reveal">
+            <div class="icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 18V6m4 12V9m4 9v-5m4 5V8m4 10v-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6" opacity="0"/></svg>
+            </div>
+            <h3>Звіти та сповіщення вручну</h3>
+            <p>Команда витрачає час на збір даних, формування звітів та контроль процесів.</p>
+          </article>
+        </div>
+        <p class="problem-finale reveal">Більшу частину цього можна автоматизувати.</p>
+      </div>
+    </section>
+
+    <section class="section capabilities" id="capabilities" aria-labelledby="capabilities-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Можливості</p>
+          <h2 id="capabilities-title">Що можна автоматизувати</h2>
+          <p class="section-lead">Від роботи з клієнтами до внутрішніх процесів команди.</p>
+        </div>
+        <div class="capabilities-grid">
+          <article class="cap-card reveal">
+            <div class="cap-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="1.6"/></svg></div>
+            <h3>Обробка заявок</h3>
+          </article>
+          <article class="cap-card reveal">
+            <div class="cap-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 18V6m4 12V9m4 9v-5m4 5V8m4 10v-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+            <h3>Продажі та ліди</h3>
+          </article>
+          <article class="cap-card reveal">
+            <div class="cap-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 10h6M9 14h4M7 4h10a2 2 0 0 1 2 2v14l-4-3H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h3>Підтримка клієнтів</h3>
+          </article>
+          <article class="cap-card reveal">
+            <div class="cap-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="16" cy="9" r="2.2" stroke="currentColor" stroke-width="1.6"/><path d="M4 19c0-2.8 2.2-5 5-5h0c1.2 0 2.3.4 3.2 1.1M13.5 15.2c.7-.4 1.5-.7 2.5-.7 2.3 0 4.2 1.6 4.7 3.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+            <h3>CRM та база клієнтів</h3>
+          </article>
+          <article class="cap-card reveal">
+            <div class="cap-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 10h18" stroke="currentColor" stroke-width="1.6"/><circle cx="8" cy="14" r="1" fill="currentColor"/></svg></div>
+            <h3>Оплати</h3>
+          </article>
+          <article class="cap-card reveal">
+            <div class="cap-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16v10H4V7Z" stroke="currentColor" stroke-width="1.6"/><path d="M8 11h8M8 14h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+            <h3>Звіти та аналітика</h3>
+          </article>
+          <article class="cap-card reveal">
+            <div class="cap-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 8v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6"/></svg></div>
+            <h3>Сповіщення</h3>
+          </article>
+          <article class="cap-card reveal">
+            <div class="cap-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="8" cy="8" r="2.5" stroke="currentColor" stroke-width="1.6"/><circle cx="16" cy="8" r="2.5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="16" r="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M10 9.5 11 14M14 9.5 13 14M9.5 8h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+            <h3>Внутрішні процеси</h3>
+          </article>
+          <article class="cap-card reveal">
+            <div class="cap-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 4h7l3 3v13H7V4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 4v3h3M9 12h6M9 15h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h3>Робота з документами</h3>
+          </article>
+          <article class="cap-card reveal">
+            <div class="cap-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v3M12 17v3M4 12h3M17 12h3M6.5 6.5l2 2M15.5 15.5l2 2M17.5 6.5l-2 2M8.5 15.5l-2 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/></svg></div>
+            <h3>AI-асистенти</h3>
+          </article>
+          <article class="cap-card reveal">
+            <div class="cap-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7h10l6 5-6 5H4V7Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M4 12h9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+            <h3>Контент та публікації</h3>
+          </article>
+          <article class="cap-card reveal">
+            <div class="cap-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 8h4v4H7V8Zm6 4h4v4h-4v-4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M11 10h2M13 14H9a2 2 0 0 1-2-2V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+            <h3>Інтеграції між сервісами</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section use-cases" id="use-cases" aria-labelledby="use-cases-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Сценарії</p>
+          <h2 id="use-cases-title">Приклади автоматизації</h2>
+          <p class="section-lead">Рішення під різні бізнес-процеси — не тільки роботу з клієнтами.</p>
+        </div>
+        <div class="scenarios-grid scenarios-grid-3">
+          <article class="scenario-card reveal">
+            <p class="scenario-label">Обробка лідів</p>
+            <h3>Від реклами до менеджера</h3>
+            <ol>
+              <li>Meta Ads / сайт</li>
+              <li>Бот отримує заявку</li>
+              <li>Задає уточнювальні питання</li>
+              <li>Створює лід у CRM</li>
+              <li>Повідомляє менеджера</li>
+            </ol>
+          </article>
+          <article class="scenario-card reveal">
+            <p class="scenario-label">Підтримка</p>
+            <h3>AI-консультант 24/7</h3>
+            <ol>
+              <li>Клієнт ставить питання</li>
+              <li>Бот знаходить відповідь</li>
+              <li>Вирішує типові запити</li>
+              <li>Складні передає співробітнику</li>
+            </ol>
+          </article>
+          <article class="scenario-card reveal">
+            <p class="scenario-label">Внутрішні процеси</p>
+            <h3>Бот для команди</h3>
+            <ol>
+              <li>Співробітник створює запит</li>
+              <li>Відповідальна людина погоджує</li>
+              <li>Дані записуються в систему</li>
+              <li>Команда отримує результат</li>
+            </ol>
+          </article>
+          <article class="scenario-card reveal">
+            <p class="scenario-label">Звітність</p>
+            <h3>Автоматичні звіти</h3>
+            <ol>
+              <li>Система збирає дані</li>
+              <li>Формує показники</li>
+              <li>Надсилає керівнику звіт у Telegram</li>
+            </ol>
+          </article>
+          <article class="scenario-card reveal">
+            <p class="scenario-label">E-commerce / продажі</p>
+            <h3>Обробка замовлень</h3>
+            <ol>
+              <li>Замовлення</li>
+              <li>CRM</li>
+              <li>Оплата</li>
+              <li>Статус</li>
+              <li>Повідомлення клієнту та менеджеру</li>
+            </ol>
+          </article>
+          <article class="scenario-card reveal">
+            <p class="scenario-label">Контент</p>
+            <h3>Автоматизація контенту</h3>
+            <ol>
+              <li>Джерело</li>
+              <li>Збір інформації</li>
+              <li>Обробка</li>
+              <li>Модерація</li>
+              <li>Публікація</li>
+            </ol>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section integrations" id="integrations" aria-labelledby="integrations-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Інтеграції</p>
+          <h2 id="integrations-title">Підключаємо інструменти, якими ви вже користуєтесь</h2>
+          <p class="section-lead">Не потрібно змінювати всю інфраструктуру. Зв'язуємо існуючі сервіси в один автоматизований процес.</p>
+        </div>
+        <ul class="badges" role="list">
+          <li class="badge reveal">Telegram</li>
+          <li class="badge reveal">CRM</li>
+          <li class="badge reveal">Google Sheets</li>
+          <li class="badge reveal">Google Calendar</li>
+          <li class="badge reveal">Meta Ads</li>
+          <li class="badge reveal">Webhooks</li>
+          <li class="badge reveal">REST API</li>
+          <li class="badge reveal">AI / LLM</li>
+          <li class="badge reveal">Stripe</li>
+          <li class="badge reveal">LiqPay</li>
+          <li class="badge reveal">Email</li>
+          <li class="badge reveal">Сайти</li>
+          <li class="badge reveal">Бази даних</li>
+        </ul>
+
+        <div class="flow-diagram reveal" aria-label="Приклад автоматизованого процесу">
+          <div class="flow-pipeline">
+            <div class="flow-node">Meta Ads</div>
+            <div class="flow-track" aria-hidden="true"><span class="flow-dot"></span></div>
+            <div class="flow-node">Landing</div>
+            <div class="flow-track" aria-hidden="true"><span class="flow-dot"></span></div>
+            <div class="flow-node flow-node-core">Telegram / Bot</div>
+            <div class="flow-track" aria-hidden="true"><span class="flow-dot"></span></div>
+            <div class="flow-node">CRM</div>
+            <div class="flow-track" aria-hidden="true"><span class="flow-dot"></span></div>
+            <div class="flow-node">Manager</div>
+          </div>
+
+          <div class="flow-side" aria-hidden="true">
+            <div class="flow-side-item">
+              <span class="flow-side-link"></span>
+              <span class="flow-node flow-node-side">AI</span>
+            </div>
+            <div class="flow-side-item flow-side-item-core">
+              <span class="flow-side-link"></span>
+              <span class="flow-node flow-node-side">API</span>
+            </div>
+            <div class="flow-side-item">
+              <span class="flow-side-link"></span>
+              <span class="flow-node flow-node-side">Google Sheets</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process" id="process" aria-labelledby="process-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Процес</p>
+          <h2 id="process-title">Як це працює</h2>
+        </div>
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step-num">01</span>
+            <div>
+              <h3>Ви описуєте процес</h3>
+              <p>Розповідаєте, що команда зараз робить вручну або що хочете покращити.</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">02</span>
+            <div>
+              <h3>Ми проєктуємо автоматизацію</h3>
+              <p>Пропонуємо сценарій, інтеграції та пояснюємо, як працюватиме рішення.</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">03</span>
+            <div>
+              <h3>Розробляємо та тестуємо</h3>
+              <p>Створюємо логіку, підключаємо потрібні сервіси та перевіряємо сценарії.</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">04</span>
+            <div>
+              <h3>Запускаємо у ваш бізнес</h3>
+              <p>Підключаємо рішення до ваших систем та допомагаємо команді почати роботу.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section trust" id="trust" aria-labelledby="trust-title">
+      <div class="container">
+        <div class="trust-panel reveal">
+          <div class="trust-copy">
+            <h2 id="trust-title">Рішення під ваш процес</h2>
+            <p>Не продаємо готовий шаблон. Спочатку розбираємо ваш бізнес-процес, а потім проєктуємо рішення під конкретну задачу.</p>
+          </div>
+          <div class="trust-flow" aria-hidden="true">
+            <span>Ваш процес</span>
+            <span class="flow-arrow">→</span>
+            <span>Аналіз</span>
+            <span class="flow-arrow">→</span>
+            <span>Автоматизація</span>
+            <span class="flow-arrow">→</span>
+            <span>Інтеграції</span>
+            <span class="flow-arrow">→</span>
+            <span>Результат</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section why-telegram" id="why-telegram" aria-labelledby="why-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Інструмент</p>
+          <h2 id="why-title">Чому Telegram зручний для автоматизації</h2>
+          <p class="section-lead">Для багатьох сценаріїв Telegram дозволяє швидко запустити зручний інтерфейс для клієнтів або команди без розробки окремого застосунку.</p>
+        </div>
+        <ul class="why-list">
+          <li class="reveal">Не потрібно встановлювати окремий застосунок</li>
+          <li class="reveal">Клієнти та команда вже користуються Telegram</li>
+          <li class="reveal">Push-повідомлення з коробки</li>
+          <li class="reveal">Працює 24/7</li>
+          <li class="reveal">Швидше та дешевше за окремий застосунок у багатьох сценаріях</li>
+          <li class="reveal">Легко інтегрується з CRM, API та іншими системами</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section cta-bridge" aria-labelledby="cta-bridge-title">
+      <div class="container">
+        <div class="cta-bridge-inner reveal">
+          <h2 id="cta-bridge-title">Не знаєте, що саме можна автоматизувати?</h2>
+          <p>Опишіть, як процес працює зараз. Ми самі знайдемо, що можна спростити або автоматизувати.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-block" id="cta" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-panel reveal">
+          <h2 id="cta-title">Є процес, який хочете автоматизувати?</h2>
+          <p>Розкажіть, що зараз забирає час вашої команди. Ми безкоштовно проаналізуємо задачу та запропонуємо варіант автоматизації.</p>
+          <div class="cta-actions">
+            <a href="#" class="btn btn-primary btn-lg js-telegram-cta" data-cta="main">Отримати безкоштовну консультацію</a>
+          </div>
+          <p class="cta-note">Безкоштовно • Без зобов'язань • Відповімо з попередньою оцінкою</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="container narrow">
+        <div class="section-head reveal">
+          <p class="eyebrow">FAQ</p>
+          <h2 id="faq-title">Часті питання</h2>
+        </div>
+        <div class="accordion" data-accordion>
+          <div class="accordion-item reveal">
+            <h3>
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                Що саме можна автоматизувати?
+                <span class="accordion-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="accordion-panel" hidden>
+              <p>Заявки, продажі, підтримку, внутрішні процеси команди, звіти, сповіщення, контент, обмін даними між сервісами та інші повторювані бізнес-процеси.</p>
+            </div>
+          </div>
+          <div class="accordion-item reveal">
+            <h3>
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                Скільки коштує автоматизація?
+                <span class="accordion-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="accordion-panel" hidden>
+              <p>Вартість залежить від сценарію, кількості інтеграцій і складності логіки. Після короткого розбору задачі даємо орієнтир без зобов'язань.</p>
+            </div>
+          </div>
+          <div class="accordion-item reveal">
+            <h3>
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                Скільки часу займає розробка?
+                <span class="accordion-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="accordion-panel" hidden>
+              <p>Прості сценарії запускаються швидше. Рішення з кількома інтеграціями, ролями або AI займають більше часу через проєктування та тестування.</p>
+            </div>
+          </div>
+          <div class="accordion-item reveal">
+            <h3>
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                Чи можна інтегрувати рішення з нашою CRM?
+                <span class="accordion-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="accordion-panel" hidden>
+              <p>Так. Підключаємо CRM через API або webhooks, щоб дані одразу потрапляли у ваші системи та воронки команди.</p>
+            </div>
+          </div>
+          <div class="accordion-item reveal">
+            <h3>
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                Чи обов'язково використовувати Telegram?
+                <span class="accordion-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="accordion-panel" hidden>
+              <p>Ні. Telegram — лише один з інструментів. Рішення може працювати з сайтом, CRM, API, базою даних, Google Sheets, email та іншими сервісами залежно від задачі.</p>
+            </div>
+          </div>
+          <div class="accordion-item reveal">
+            <h3>
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                Чи можна підключити AI?
+                <span class="accordion-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="accordion-panel" hidden>
+              <p>Так. AI можна використати для консультацій, класифікації звернень, допомоги команді, обробки текстів та інших сценаріїв, де потрібна гнучка логіка.</p>
+            </div>
+          </div>
+          <div class="accordion-item reveal">
+            <h3>
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                Чи можна автоматизувати внутрішні процеси компанії?
+                <span class="accordion-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="accordion-panel" hidden>
+              <p>Так. Часто автоматизуємо запити всередині команди, погодження, сповіщення, збір даних і передачу результатів у потрібні системи.</p>
+            </div>
+          </div>
+          <div class="accordion-item reveal">
+            <h3>
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                Чи можна доопрацювати вже існуючу систему?
+                <span class="accordion-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="accordion-panel" hidden>
+              <p>Так. Можемо розширити наявні сценарії, додати інтеграції або покращити поточну логіку після оцінки архітектури.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand-block">
+        <p class="footer-brand">Procevra</p>
+        <p class="footer-tagline">Автоматизація бізнесу та Telegram-боти</p>
+      </div>
+      <a href="#" class="btn btn-primary js-telegram-cta" data-cta="footer">Отримати безкоштовну консультацію</a>
+      <p class="footer-copy">© <span id="year"></span> Procevra. Автоматизація бізнес-процесів для малого та середнього бізнесу.</p>
+    </div>
+  </footer>
+
+  <a href="#" class="sticky-cta js-telegram-cta" data-cta="sticky" aria-label="Отримати безкоштовну консультацію">
+    Отримати безкоштовну консультацію
+  </a>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
