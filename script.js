@@ -97,9 +97,7 @@ function initMetaPixel() {
 function trackTelegramCtaClick() {
   if (typeof window.fbq !== 'function') return;
   try {
-    // Contact — клік по CTA на лендингу.
-    // Lead відправляємо лише після реальної заявки з телефоном (Meta CAPI у боті).
-    window.fbq('track', 'Contact');
+    window.fbq('track', 'Lead');
   } catch (err) {
     // Pixel не повинен ламати UX
   }
