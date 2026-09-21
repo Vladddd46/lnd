@@ -3,6 +3,7 @@
  */
 const TELEGRAM_BOT_URL = 'https://t.me/procervabot';
 const META_PIXEL_ID = '1752873129327418';
+const LEAD_API_URL = 'https://procerva.duckdns.org/web-lead';
 
 /**
  * UTM state
@@ -98,8 +99,16 @@ function trackTelegramCtaClick() {
   if (typeof window.fbq !== 'function') return;
   try {
     // Contact — клік CTA → Telegram.
-    // Lead відправляється вже в боті після реальної заявки.
     window.fbq('track', 'Contact');
+  } catch (err) {
+    // Pixel не повинен ламати UX
+  }
+}
+
+function trackLeadEvent() {
+  if (typeof window.fbq !== 'function') return;
+  try {
+    window.fbq('track', 'Lead');
   } catch (err) {
     // Pixel не повинен ламати UX
   }
@@ -131,6 +140,101 @@ function bindTelegramCtas() {
   document.querySelectorAll('.js-telegram-cta').forEach((el) => {
     el.setAttribute('href', deepLink);
     el.addEventListener('click', handleTelegramCtaClick);
+  });
+}
+
+const MIN_PHONE_DIGITS = 8;
+const MAX_PHONE_DIGITS = 15;
+const PHONE_ERROR_TEXT = 'Введіть, будь ласка, коректний номер телефону.';
+const PHONE_SUBMIT_ERROR_TEXT = 'Не вдалося надіслати номер. Спробуйте ще раз.';
+const PHONE_SUBMIT_IDLE_TEXT = 'Залишити номер';
+const PHONE_SUBMIT_LOADING_TEXT = 'Надсилаємо...';
+
+function normalizePhone(raw) {
+  const value = String(raw || '').trim();
+  const digits = value.replace(/\D/g, '');
+  if (value.startsWith('+')) return `+${digits}`;
+  return digits;
+}
+
+function isValidPhone(raw) {
+  const digits = String(raw || '').replace(/\D/g, '');
+  return digits.length >= MIN_PHONE_DIGITS && digits.length <= MAX_PHONE_DIGITS;
+}
+
+async function submitPhoneLead(phone) {
+  const response = await fetch(LEAD_API_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      phone: phone,
+      source: 'website',
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error('Failed to submit lead');
+  }
+
+  return await response.json();
+}
+
+function setLeadFormError(input, errorEl, message) {
+  if (!errorEl) return;
+  errorEl.hidden = !message;
+  errorEl.textContent = message || '';
+
+  if (!message) {
+    input?.classList.remove('is-invalid');
+    input?.removeAttribute('aria-invalid');
+    return;
+  }
+
+  const isValidationError = message === PHONE_ERROR_TEXT;
+  input?.classList.toggle('is-invalid', isValidationError);
+  if (isValidationError) input?.setAttribute('aria-invalid', 'true');
+  else input?.removeAttribute('aria-invalid');
+}
+
+function initPhoneLeadForm() {
+  const form = document.getElementById('phone-lead-form');
+  const input = document.getElementById('lead-phone');
+  const submit = document.getElementById('lead-phone-submit');
+  const errorEl = document.getElementById('lead-phone-error');
+  const successEl = document.getElementById('lead-phone-success');
+  if (!form || !input || !submit || !errorEl || !successEl) return;
+
+  input.addEventListener('input', () => {
+    if (errorEl.hidden) return;
+    if (isValidPhone(input.value)) setLeadFormError(input, errorEl, '');
+  });
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const phone = input.value.trim();
+    if (!phone || !isValidPhone(phone)) {
+      setLeadFormError(input, errorEl, PHONE_ERROR_TEXT);
+      input.focus();
+      return;
+    }
+
+    setLeadFormError(input, errorEl, '');
+    submit.disabled = true;
+    submit.textContent = PHONE_SUBMIT_LOADING_TEXT;
+
+    try {
+      await submitPhoneLead(normalizePhone(phone));
+      trackLeadEvent();
+      form.hidden = true;
+      successEl.hidden = false;
+    } catch (err) {
+      submit.disabled = false;
+      submit.textContent = PHONE_SUBMIT_IDLE_TEXT;
+      setLeadFormError(input, errorEl, PHONE_SUBMIT_ERROR_TEXT);
+    }
   });
 }
 
@@ -270,6 +374,7 @@ document.addEventListener('DOMContentLoaded', () => {
   readUtmParams();
   initMetaPixel();
   bindTelegramCtas();
+  initPhoneLeadForm();
   initMobileMenu();
   initHeaderScroll();
   initAccordion();
